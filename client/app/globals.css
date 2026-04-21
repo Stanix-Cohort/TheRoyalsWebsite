@@ -8,19 +8,118 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-helixa: var(--font-helixa);
+
+  /* Grey */
+  --color-grey-50: #e8e8e8;
+  --color-grey-100: #b6b6b6;
+  --color-grey-200: #939393;
+  --color-grey-300: #626262;
+  --color-grey-400: #434343;
+  --color-grey-500: #141414;
+  --color-grey-600: #121212;
+  --color-grey-700: #0e0e0e;
+  --color-grey-800: #0b0b0b;
+  --color-grey-900: #080808;
+
+  /* Purple */
+  --color-purple-50: #efe6fd;
+  --color-purple-100: #ceb0fa;
+  --color-purple-200: #b78af7;
+  --color-purple-300: #9654f4;
+  --color-purple-400: #8133f1;
+  --color-purple-500: #6200ee;
+  --color-purple-600: #5900d9;
+  --color-purple-700: #4600a9;
+  --color-purple-800: #360083;
+  --color-purple-900: #290064;
+
+  /* Gold */
+  --color-gold-50: #fef9ea;
+  --color-gold-100: #fcedbf;
+  --color-gold-200: #fae4a0;
+  --color-gold-300: #f8d774;
+  --color-gold-400: #f6d059;
+  --color-gold-500: #f4c430;
+  --color-gold-600: #deb22c;
+  --color-gold-700: #ad8b22;
+  --color-gold-800: #866c1a;
+  --color-gold-900: #665214;
+
+  /* Green */
+  --color-green-50: #ebf3e6;
+  --color-green-100: #c2dbb0;
+  --color-green-200: #a4ca8a;
+  --color-green-300: #7ab154;
+  --color-green-400: #61a233;
+  --color-green-500: #398b00;
+  --color-green-600: #347e00;
+  --color-green-700: #286300;
+  --color-green-800: #1f4c00;
+  --color-green-900: #183a00;
+
+  /* Blue */
+  --color-blue-50: #e6e9f8;
+  --color-blue-100: #b0bbe8;
+  --color-blue-200: #8a9add;
+  --color-blue-300: #556ccd;
+  --color-blue-400: #344fc3;
+  --color-blue-500: #0123b4;
+  --color-blue-600: #0120a4;
+  --color-blue-700: #011980;
+  --color-blue-800: #011363;
+  --color-blue-900: #000f4c;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* Typography Scale */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-helixa);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.75rem, 5vw + 1.5rem, 5.25rem); /* 44px → 84px */
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: clamp(2.125rem, 4vw + 1rem, 4rem); /* 34px → 64px */
+}
+
+h3 {
+  font-size: clamp(1.625rem, 3vw + 0.75rem, 3rem); /* 26px → 48px */
+}
+
+h4 {
+  font-size: clamp(1.375rem, 2vw + 0.5rem, 2.25rem); /* 22px → 36px */
+}
+
+h5 {
+  font-size: clamp(1.25rem, 1.5vw + 0.5rem, 1.75rem); /* 20px → 28px */
+}
+
+h6 {
+  font-size: clamp(1.125rem, 1vw + 0.375rem, 1.375rem); /* 18px → 22px */
+}
+
+p {
+  font-size: clamp(0.9375rem, 0.5vw + 0.75rem, 1.125rem); /* 15px → 18px */
+  line-height: 1.6;
+  letter-spacing: -0.01em;
 }
