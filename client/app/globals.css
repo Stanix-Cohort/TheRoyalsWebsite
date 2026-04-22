@@ -72,7 +72,6 @@
   --color-blue-900: #000f4c;
 }
 
-
 body {
   background: var(--background);
   color: var(--foreground);
