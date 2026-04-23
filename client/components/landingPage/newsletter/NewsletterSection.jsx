@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function NewsletterSection() {
   return (
-    <div className="lg:px-32">
+    <div className="lg:px-32 mb-16">
       <section className="bg-blue-300 rounded-2xl py-24 px-4">
       <div className="max-w-3xl mx-auto text-center text-white">
         <h2 className="mb-6 font-helixa">Stay Connected</h2>
