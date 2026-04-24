@@ -1,8 +1,8 @@
-import { ArrowRight } from "lucide-react";
+import { Icon } from "@iconify/react";
 import Image from "next/image";
 
 export default function WorkCard({ 
-  icon: Icon, 
+  icon, 
   title, 
   description, 
   bgColor, 
@@ -13,25 +13,27 @@ export default function WorkCard({
   return (
     <div className={`relative ${bgColor} rounded-2xl p-8 lg:p-10 flex flex-col min-h-[420px] overflow-hidden group`}>
       {/* Icon Badge */}
-      <div className="relative z-10 w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm mb-24">
-        {Icon && <Icon className="w-6 h-6 text-grey-900" />}
+      <div className="relative z-10 w-14 h-14 bg-white rounded-lg shadow-sm mb-16 flex items-center justify-center">
+        {icon && (
+          <Icon icon={icon} className="w-7 h-7 text-grey-900" />
+        )}
       </div>
 
       {/* Content */}
       <div className={`relative z-10 mt-auto ${textColor}`}>
-        <h3 className="mb-4">{title}</h3>
-        <p className="opacity-80 line-clamp-4">{description}</p>
+        <h4 className="mb-4">{title}</h4>
+        <p className="">{description}</p>
       </div>
 
       {/* Background Pattern */}
       {patternSvg && (
-        <div className={`absolute top-0 right-0 pointer-events-none ${patternClassName}`}>
+        <div className={`absolute top-0 right-0 pointer-events-none opacity-40 group-hover:opacity-60 transition-opacity duration-500 ${patternClassName}`}>
           <Image 
             src={patternSvg}
-            width={240}
-            height={240}
             alt=""
-            className="opacity-90"
+            width={200}
+            height={200}
+            className="w-full h-auto"
           />
         </div>
       )}

@@ -38,12 +38,13 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${helixa.variable} ${inter.variable} h-full antialiased`}
+      className={`${helixa.variable} ${inter.variable} antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Navbar />
-        {children}</body>
+        {children}
         <Footer />
+      </body>
     </html>
   );
 }

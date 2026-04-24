@@ -1,9 +1,10 @@
 import { ArrowRight } from "lucide-react";
+import Button from "../../ui/Button";
 
 export default function NewsletterSection() {
   return (
     <div className="lg:px-32 mb-16">
-      <section className="bg-blue-300 rounded-2xl py-24 px-4">
+      <section className="section bg-blue-300 rounded-2xl">
       <div className="max-w-3xl mx-auto text-center text-white">
         <h2 className="mb-6 font-helixa">Stay Connected</h2>
         <p className="text-blue-50/80 mb-12 text-lg">
@@ -48,17 +49,12 @@ export default function NewsletterSection() {
             </label>
           </div>
 
-          {/* Submit Button */}
           <div className="flex justify-center pt-8">
-            <button 
+            <Button 
+              label="Subscribe Now" 
               type="submit"
-              className="inline-flex items-center gap-6 bg-white hover:bg-blue-50 text-blue-400 rounded-full pl-8 pr-2 py-2.5 transition-all duration-300 shadow-xl group"
-            >
-              <span className="font-medium text-lg">Subscribe Now</span>
-              <div className="bg-blue-400 rounded-full p-3 group-hover:translate-x-1 transition-transform">
-                <ArrowRight className="w-5 h-5 text-white" />
-              </div>
-            </button>
+              variant="secondary"
+            />
           </div>
         </form>
       </div>

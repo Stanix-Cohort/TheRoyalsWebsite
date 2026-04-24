@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import Button from "../../ui/Button";
 
 export default function HeroContent() {
   return (
@@ -17,12 +18,11 @@ export default function HeroContent() {
         We are a non-profit organization dedicated to creating sustainable impact through education, mentorship, and community development initiatives across Africa.
       </p>
 
-      <button className="inline-flex items-center gap-6 bg-blue-300 hover:bg-blue-200 text-white rounded-full pl-6 pr-2 py-2 transition-colors duration-300">
-        <span className="font-medium text-lg">Our Story</span>
-        <div className="bg-foreground rounded-full p-3">
-          <ArrowRight className="w-4 h-4 text-white text-medium" />
-        </div>
-      </button>
+      <Button 
+        label="Our Story" 
+        href="/about" 
+        variant="secondary"
+      />
     </div>
   );
 }

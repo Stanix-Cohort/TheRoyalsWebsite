@@ -19,7 +19,7 @@ export default function ImpactSection() {
   ];
 
   return (
-    <section className="py-24 px-4 bg-white">
+    <section className="section bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-grey-900 mb-6">How We&rsquo;re Changing Lives</h2>

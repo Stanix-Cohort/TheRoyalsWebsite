@@ -4,18 +4,18 @@ import ImpactSection from "../components/landingPage/impact/ImpactSection";
 import WorkSection from "../components/landingPage/work/WorkSection";
 import StatsSection from "../components/landingPage/stats/StatsSection";
 import PartnersSection from "../components/landingPage/partners/PartnersSection";
+import MomentOfImpact from "../components/landingPage/moment/MomentOfImpact";
 import NewsletterSection from "../components/landingPage/newsletter/NewsletterSection";
 
 
 export default function Home() {
   return (
     <main>
-      <Navbar/>
-      <h1>Home</h1>
       <Hero />
       <WorkSection />
       <StatsSection />
       <PartnersSection />
+      <MomentOfImpact />
       <NewsletterSection />
     </main>
   );

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import Button from "../../ui/Button";
 
 export default function PartnersSection() {
   const partners = [
@@ -10,7 +10,7 @@ export default function PartnersSection() {
   ];
 
   return (
-    <section className="py-24 px-4 bg-white">
+    <section className="section bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-grey-900 mb-6 font-helixa">Our Partners</h2>
@@ -38,12 +38,11 @@ export default function PartnersSection() {
         </div>
 
         <div className="flex justify-center">
-          <button className="inline-flex items-center gap-6 bg-blue-300 hover:bg-blue-200 text-white rounded-full pl-8 pr-2 py-2.5 transition-all duration-300 shadow-sm group">
-            <span className="font-medium text-lg">Support Our Mission</span>
-            <div className="bg-foreground rounded-full p-3 group-hover:translate-x-1 transition-transform">
-              <ArrowRight className="w-5 h-5 text-white" />
-            </div>
-          </button>
+          <Button 
+            label="Support Our Mission" 
+            href="/support" 
+            variant="primary"
+          />
         </div>
       </div>
     </section>

@@ -20,12 +20,12 @@ export default function StatsSection() {
   ];
 
   return (
-    <section className="bg-blue-300 py-20 md:py-32 px-4 overflow-hidden">
+    <section className="section bg-blue-300 overflow-hidden">
       <div className="max-w-7xl text-white mx-auto">
         {/* Header Content */}
         <div className="mb-16 md:mb-24">
-          <h2 className="mb-6 leading-tight">Our Impact in Numbers</h2>
-          <p className="max-w-xl text-blue-50/80 text-lg md:text-xl">
+          <h2 className="mb-6">Our Impact in Numbers</h2>
+          <p className="max-w-xl">
             Measuring success through the lives we&rsquo;re touched and communities we&rsquo;ve empowered.
           </p>
         </div>
@@ -37,14 +37,12 @@ export default function StatsSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-16">
               {stats.map((stat, index) => (
                 <div key={index} className="space-y-4 group">
-                  <div className="text-4xl md:text-5xl font-helixa font-bold text-white leading-none">
+                  <div className="text-white">
                     {stat.number}
                   </div>
                   <div className="space-y-2">
                     <div className="text-xl font-bold tracking-tight">{stat.label}</div>
-                    <p className="text-blue-50/70 text-base leading-relaxed max-w-[240px]">
-                      {stat.description}
-                    </p>
+                    <p className="">{stat.description}</p>
                   </div>
                 </div>
               ))}

@@ -7,7 +7,7 @@ export default function Footer() {
     const currentYear = new Date().getFullYear();
     
     return(
-        <footer className='bg-black text-white w-1440px h-851px pt-16 pb-8 px-md:px-12'>
+        <footer className='section bg-black text-white'>
             <div className='flex justify-end mb-24 max-w-7xl mx-auto'>
                  <h1 className='text-6xl md:text-8xl font-medium flex items-baseline gap-2'>
                       Get Involved
@@ -35,9 +35,9 @@ export default function Footer() {
     
                 {/* Footer Quick Links */}
                 <div className='flex flex-col'>
-                    <h3 className='text-xl font-bold mb-6'>
+                    <h5 className=' mb-6'>
                         Quick Links
-                    </h3>
+                    </h5>
                     <ul className='space-y-3 text-gray-400'>
                         <li><Link href='/' className='hover:text-blue-500 transition'>Home</Link></li>
                         <li><Link href='/about' className=' hover:text-blue-500 transition'>About Us</Link></li>
@@ -50,7 +50,7 @@ export default function Footer() {
 
                 {/* Initiatives */}
                 <div className='flex flex-col'>
-                    <h3 className='text-xl font-bold mb-6'>Our initiatives</h3>
+                    <h5 className='mb-6'>Our initiatives</h5>
                     <ul className='space-y-4 text-gray-400'>
                         <li>Clothe A BoyChild Initiative (CABI)</li>
                         <li>Urgent 2K Campaign</li>
@@ -58,9 +58,9 @@ export default function Footer() {
                 </div>
                 {/* Contact channels*/}
                 <div className='flex flex-col'>
-                    <h3 className='text-xl font-bold mb-6'>
+                    <h5 className='mb-6'>
                         Get Intouch.
-                    </h3>
+                    </h5>
                     <ul>
                         <li className='flex items-center gap-4 mt-1 text-gray-400'><FaEnvelope className='text-white' /><span>hellothe royals@gmail.com</span></li>
                         <li className='flex items-center gap-3 mt-1 text-gray-400'><FaPhone className='text-white' /><span className='text-sm'>+2347010990908</span></li>
@@ -70,18 +70,18 @@ export default function Footer() {
                     </ul>
                     {/* Horizontal Icons */}
                     <div className='flex flex-row justify-start mt-5 gap-3.5'>
-                        <a href="#" className="hover:text-blue-500 transition">
+                        <Link href="#" className="hover:text-blue-500 transition">
                         <FaYoutube size={20} /> 
-                        </a>
-                        <a href="#" className="hover:text-blue-500 transition">
+                        </Link> 
+                        <Link href="#" className="hover:text-blue-500 transition">
                         <FaLinkedin size={20} /> 
-                        </a>
-                        <a href="#" className="hover:text-blue-500 transition">
+                        </Link>
+                        <Link href="#" className="hover:text-blue-500 transition">
                         <FaXTwitter size={20} /> 
-                        </a>
-                        <a href="#" className="hover:text-blue-500 transition">
+                        </Link>
+                        <Link href="#" className="hover:text-blue-500 transition">
                         <FaInstagram size={20} /> 
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 
@@ -91,18 +91,16 @@ export default function Footer() {
                 <p className='text-gray-500 text-sm'>@ {currentYear} The Royals. All rights reserved</p>
                 {/* Colorful shapes at the footer bottom  */}
 
-                <Image
+                <div className='flex justify-left w-full'>
+                    <Image
                     src="/assets/footer-image.png"
                     alt='Decorative Shapes'
                     width={450}
                     height={60}
-                    className='object-contain'
+                    className=' object-contain'
                  />
                 </div>
-                
-
-
-                
+                </div>            
             </footer>
     )
 }
