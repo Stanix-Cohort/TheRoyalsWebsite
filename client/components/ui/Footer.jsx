@@ -15,14 +15,15 @@ export default function Footer() {
                  </h1>
 
             </div>
-            <div className='max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-20'>
+            {/* Main Grid */}
+            <div className='max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16'>
 
                  {/* Logo Section */}
                  <div className='space-y-6'>
                 <Image src='/assets/footerLogo-white.svg'
                  alt='The Royal Logo'
-                 width={160}
-                 height={48}
+                 width={180}
+                 height={60}
                 className='object-contain brightness-0 invert'
                 />
                 <p className='text-gray-400 text-sm leading-relaxed max-w-[280px]'>
@@ -43,7 +44,7 @@ export default function Footer() {
                         <li><Link href='/about' className=' hover:text-blue-500 transition'>About Us</Link></li>
                         <li><Link href='/gallery' className=' hover:text-blue-500 transition'>Gallery</Link></li>
                         <li><Link href='/contact' className=' hover:text-blue-500 transition'>Contact</Link></li>
-                        <li><Link href='/policy' className=' hover:text-blue-500 transition'>Privacy Policy</Link></li>
+                        <li><Link href='/privacy-policy' className=' hover:text-blue-500 transition'>Privacy Policy</Link></li>
                     </ul>
                     
                 </div>
@@ -56,6 +57,7 @@ export default function Footer() {
                         <li>Urgent 2K Campaign</li>
                     </ul>
                 </div>
+
                 {/* Contact channels*/}
                 <div className='flex flex-col'>
                     <h5 className='mb-6'>
@@ -87,8 +89,8 @@ export default function Footer() {
                 
             </div>
                 {/* Copy rights */}
-                <div className='flex flex-col items-center gap-6'>
-                <p className='text-gray-500 text-sm'>@ {currentYear} The Royals. All rights reserved</p>
+                <p className='text-gray-500 text-sm text-center'>@ {currentYear} The Royals. All rights reserved</p>
+                <div className='w-full flex justify-start mt-10'>
                 {/* Colorful shapes at the footer bottom  */}
 
                 <div className='flex justify-left w-full'>
