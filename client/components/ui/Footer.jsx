@@ -7,22 +7,24 @@ export default function Footer() {
     const currentYear = new Date().getFullYear();
     
     return(
-        <footer className='bg-black text-white w-1440px h-851px pt-16 pb-8 px-md:px-12'>
-            <div className='flex justify-end mb-24 max-w-7xl mx-auto'>
-                 <h1 className='text-6xl md:text-8xl font-medium flex items-baseline gap-2'>
+        <footer className='bg-black text-white w-full pt-16 pb-8 px-4 sm:px-6 lg:px-12'>
+            {/* Top Heading */}
+            <div className='flex justify-end mb-16 max-w-7xl mx-auto'>
+                 <h1 className='text-4xl sm:text-5xl md:text-7xl font-medium flex items-baseline gap-2'>
                       Get Involved
                      <span className='block w-3 h-3 bg-blue-600 rounded-full translate-y-[-2px]'></span>
                  </h1>
 
             </div>
-            <div className='max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-20'>
+            {/* Main Grid */}
+            <div className='max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16'>
 
                  {/* Logo Section */}
                  <div className='space-y-6'>
                 <Image src='/assets/footerLogo-white.svg'
                  alt='The Royal Logo'
-                 width={160}
-                 height={48}
+                 width={180}
+                 height={60}
                 className='object-contain brightness-0 invert'
                 />
                 <p className='text-gray-400 text-sm leading-relaxed max-w-[280px]'>
@@ -43,7 +45,7 @@ export default function Footer() {
                         <li><Link href='/about' className=' hover:text-blue-500 transition'>About Us</Link></li>
                         <li><Link href='/gallery' className=' hover:text-blue-500 transition'>Gallery</Link></li>
                         <li><Link href='/contact' className=' hover:text-blue-500 transition'>Contact</Link></li>
-                        <li><Link href='/policy' className=' hover:text-blue-500 transition'>Privacy Policy</Link></li>
+                        <li><Link href='/privacy-policy' className=' hover:text-blue-500 transition'>Privacy Policy</Link></li>
                     </ul>
                     
                 </div>
@@ -51,14 +53,15 @@ export default function Footer() {
                 {/* Initiatives */}
                 <div className='flex flex-col'>
                     <h3 className='text-xl font-bold mb-6'>Our initiatives</h3>
-                    <ul className='space-y-4 text-gray-400'>
+                    <ul className='space-y-4 text-gray-400 text-sm'>
                         <li>Clothe A BoyChild Initiative (CABI)</li>
                         <li>Urgent 2K Campaign</li>
                     </ul>
                 </div>
+
                 {/* Contact channels*/}
                 <div className='flex flex-col'>
-                    <h3 className='text-xl font-bold mb-6'>
+                    <h3 className='text-xl font-bold mb-5'>
                         Get Intouch.
                     </h3>
                     <ul>
@@ -69,7 +72,7 @@ export default function Footer() {
                             Orile Road, Tabon-Tabon, <br /> Agege, Lagos, Nigeria</span></li>
                     </ul>
                     {/* Horizontal Icons */}
-                    <div className='flex flex-row justify-start mt-5 gap-3.5'>
+                    <div className='flex flex-row justify-start mt-6 gap-3.5'>
                         <a href="#" className="hover:text-blue-500 transition">
                         <FaYoutube size={20} /> 
                         </a>
@@ -87,8 +90,8 @@ export default function Footer() {
                 
             </div>
                 {/* Copy rights */}
-                <div className='flex flex-col items-center gap-6'>
-                <p className='text-gray-500 text-sm'>@ {currentYear} The Royals. All rights reserved</p>
+                <p className='text-gray-500 text-sm text-center'>@ {currentYear} The Royals. All rights reserved</p>
+                <div className='w-full flex justify-start mt-10'>
                 {/* Colorful shapes at the footer bottom  */}
 
                 <Image
