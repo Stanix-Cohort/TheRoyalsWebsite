@@ -14,13 +14,13 @@ export default function Button({
   const baseStyles = "inline-flex items-center justify-between gap-4 rounded-full transition-all duration-300 font-bold active:scale-[0.98] group";
   
   const variants = {
-    primary: "bg-blue-500 hover:bg-blue-600 text-white pl-8 pr-2 py-2 ",
+    primary: "bg-blue-300 hover:bg-blue-400 text-white pl-8 pr-2 py-2 ",
     secondary: "bg-white hover:bg-grey-50 text-grey-900 pl-8 pr-2 py-2 ",
   };
 
   const iconCircleVariants = {
-    primary: "bg-[#0A1647]", // Dark blue
-    secondary: "bg-blue-500",
+    primary: "bg-blue-800", // Dark blue
+    secondary: "bg-blue-800",
   };
 
   const content = (
