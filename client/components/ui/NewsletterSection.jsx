@@ -178,13 +178,17 @@ export default function NewsletterSection({ bgVariant = "blue" }) {
         {status === "success" && (
           <div className="flex flex-col items-center justify-center py-10 text-center animate-in fade-in zoom-in duration-500">
             <div className="relative w-24 h-24 mb-8">
-                <Image 
-                  src="/Icons/success.svg"
-                  alt="Error"
-                  fill
-                  className="object-contain"
+              <svg width="100%" height="100%" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="75.3333" height="75.3333" rx="37.6667" fill="white"/>
+                <path 
+                  d="M22.5999 38.9915C22.5999 38.9915 29.5537 51.6164 35.3486 48.4601C41.1434 45.3039 52.7332 26.3667 52.7332 26.3667" 
+                  stroke={bgVariant === "purple" ? "#7C3AED" : bgVariant === "urgent" ? "#16a34a" : "#5D75D4"} 
+                  strokeWidth="9.41667" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
                 />
-              </div>
+              </svg>
+            </div>
              <h2 className="leading-[120%] tracking-[-5%] text-center text-[41px] md:text-[51px] font-black text-white mb-6">
                 Subscription Successful
               </h2>

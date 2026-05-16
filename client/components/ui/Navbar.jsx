@@ -8,6 +8,7 @@ import { Icon } from '@iconify/react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import Button from './Button';
+import { Logo } from './Logo';
 
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
@@ -90,15 +91,8 @@ export default function Navbar() {
       <nav className={`fixed top-0 left-0 w-full z-150 transition-all duration-500 bg-white border-b border-grey-50 h-20`}>
         <div className="max-w-7xl h-full mx-auto flex items-center justify-between px-4 md:px-8">
           
-          <Link href="/" className="relative z-160 block w-32 md:w-40 lg:w-52 h-10 lg:h-12" onClick={() => setIsMobileMenuOpen(false)}>
-            <Image 
-              src="/assets/navLogo-blue.svg"
-              alt="The Royals Logo"
-              fill
-              sizes="(max-width: 768px) 128px, (max-width: 1024px) 160px, 208px"
-              className="object-contain"
-              priority
-            />
+          <Link href="/" className="relative z-160 block h-10 lg:h-12" onClick={() => setIsMobileMenuOpen(false)}>
+            <Logo variant="blue" height="100%" width="auto" />
           </Link>
 
           {/* Desktop Navigation */}

@@ -15,7 +15,11 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://the-royals.vercel.a
 
 export const EmailLayout = ({ previewText, children }) => (
   <Html>
-    <Head />
+    <Head>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&display=swap');
+      `}</style>
+    </Head>
     <Preview>{previewText}</Preview>
     <Body style={main}>
       <Container style={container}>
@@ -25,7 +29,7 @@ export const EmailLayout = ({ previewText, children }) => (
             <tr>
               <td style={headerContent}>
                 <Img
-                  src="https://res.cloudinary.com/diluabuwv/image/upload/v1778557909/The_Royals_Logo_Black_Variant_jxgbqr.svg"
+                  src={`${baseUrl}/assets/footerLogo-white.svg`}
                   width="120"
                   alt="The Royals"
                   style={logo}
@@ -54,7 +58,7 @@ export const EmailLayout = ({ previewText, children }) => (
             <tr>
               <td style={{ paddingBottom: "24px" }}>
                 <Img
-                  src="https://res.cloudinary.com/diluabuwv/image/upload/v1778557909/The_Royals_Logo_Black_Variant_jxgbqr.svg"
+                  src={`${baseUrl}/assets/footerLogo-white.svg`}
                   width="100"
                   alt="The Royals"
                   style={logo}

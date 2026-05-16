@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/ui/Navbar";
@@ -26,6 +26,12 @@ const helixa = localFont({
 
 const inter = Inter({
   variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
 });
@@ -58,7 +64,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${helixa.variable} ${inter.variable} antialiased`}
+      className={`${helixa.variable} ${inter.variable} ${montserrat.variable} antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Navbar />

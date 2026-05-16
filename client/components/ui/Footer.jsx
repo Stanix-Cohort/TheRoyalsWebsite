@@ -1,6 +1,9 @@
+'use client'
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { Icon } from "@iconify/react";
+import { Logo } from "./Logo";
 
 const QUICK_LINKS = [
   { label: 'Home', href: '/' },
@@ -70,14 +73,8 @@ export default function Footer() {
 
                  {/* Logo Section */}
                  <div className='col-span-1 md:col-span-2 lg:col-span-1 space-y-6 '>
-                    <div className='relative w-[180px] h-[60px]'>
-                        <Image 
-                            src='/assets/footerLogo-white.svg'
-                            alt='The Royal Logo'
-                            fill
-                            sizes="180px"
-                            className='object-contain font-helixa brightness-0 invert'
-                        />
+                    <div className='relative h-[60px]'>
+                        <Logo variant="white" height="100%" width="auto" />
                     </div>
                     <p className='text-grey-50'>
                         Empowering communities through education, mentorship, and sustainable development initiatives.
