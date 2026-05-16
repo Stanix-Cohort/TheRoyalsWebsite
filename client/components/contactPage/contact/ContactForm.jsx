@@ -88,22 +88,25 @@ function ContactFormContent() {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [enquiryType, setEnquiryType] = useState(enquiryTypes[0]);
-  const [message, setMessage] = useState(
-    enquiryTypes[0].defaultMessage.join("\n\n"),
-  );
+  // Determine initial selection to avoid setting state in a useEffect
+  const initialType = typeParam 
+    ? enquiryTypes.find((t) => t.label.toLowerCase().includes(typeParam.toLowerCase())) || enquiryTypes[0]
+    : enquiryTypes[0];
 
-  useEffect(() => {
-    if (typeParam) {
-      const selectedType = enquiryTypes.find(
-        (t) => t.label.toLowerCase().includes(typeParam.toLowerCase())
-      );
-      if (selectedType) {
-        setEnquiryType(selectedType);
-        setMessage(selectedType.defaultMessage.join("\n\n"));
-      }
-    }
-  }, [typeParam]);
+  const [enquiryType, setEnquiryType] = useState(initialType);
+  const [message, setMessage] = useState(initialType.defaultMessage.join("\n\n"));
+
+  // Keep state in sync if URL param changes (Derived State)
+  const [prevTypeParam, setPrevTypeParam] = useState(typeParam);
+  if (typeParam !== prevTypeParam) {
+    setPrevTypeParam(typeParam);
+    const newSelectedType = typeParam 
+      ? enquiryTypes.find((t) => t.label.toLowerCase().includes(typeParam.toLowerCase())) || enquiryTypes[0]
+      : enquiryTypes[0];
+    
+    setEnquiryType(newSelectedType);
+    setMessage(newSelectedType.defaultMessage.join("\n\n"));
+  }
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -176,8 +179,8 @@ function ContactFormContent() {
     setFullName("");
     setEmail("");
     setPhone("");
-    setEnquiryType(null);
-    setMessage("");
+    setEnquiryType(enquiryTypes[0]);
+    setMessage(enquiryTypes[0].defaultMessage.join("\n\n"));
     setFormState(FORM_STATE.IDLE);
   };
 
@@ -346,7 +349,7 @@ function ContactFormContent() {
                     {({ open }) => (
                       <>
                         <span className="!leading-[140%] !text-[16px] text-grey-400">
-                          {enquiryType.label}
+                          {enquiryType?.label || "Select Enquiry Type"}
                         </span>
 
                         <ChevronDown
@@ -413,7 +416,7 @@ function ContactFormContent() {
           </div>
 
           <p className="text-center font-helixa !leading-[120%] !tracking-[-5%] !text-[24px] font-bold text-grey-900">
-            Thank you for submitting the form, we'll contact you shortly.
+            Thank you for submitting the form, we&apos;ll contact you shortly.
           </p>
         </div>
       )}

@@ -5,7 +5,7 @@ const founders = [
     id: "solomonemakwu",
     name: "Solomon Emakwu",
     role: "Founder",
-    image: ["https://res.cloudinary.com/diluabuwv/image/upload/v1778415259/Founder_Solomon_Emakwu_i8bzmi.jpg", "/assets/solomon-emakwu-md.jpg"],
+    image: "https://res.cloudinary.com/diluabuwv/image/upload/v1778415259/Founder_Solomon_Emakwu_i8bzmi.jpg",
     avatar: "/assets/solomon-emakwu-avatar.webp",
     bio: (
       <p className="max-w-xl text-grey-300">
@@ -30,10 +30,8 @@ const founders = [
     id: "mariaugboojoideemakwu",
     name: "Maria Ugboojoide Emakwu",
     role: "Co-founder",
-    image: [
-      "/assets/maria-ugboojoide-emakwu-sm.png",
-      "/assets/maria-ugboojoide-emakwu-md.png",
-    ],
+    image:
+      "https://res.cloudinary.com/diluabuwv/image/upload/v1778415259/Co-founder_Maria_Ugboojoide_Emakwu_vdvaoz.png",
     avatar: "/assets/maria-ugboojoide-emakwu-avatar.webp",
     bio: (
       <p className="max-w-xl text-grey-300">
@@ -61,8 +59,8 @@ const founders = [
 export default function Founders() {
   return (
     <section className="section pt-0 bg-white">
-      <div className="flex flex-col gap-20 max-w-7xl mx-auto">
-        <div className="flex flex-col items-center gap-4">
+      <div className="flex flex-col gap-16 max-w-8xl mx-auto">
+        <div className="flex flex-col items-center gap-6">
           <h3 className="text-center">Meet Our Founders</h3>
 
           <p className="max-w-lg text-center text-grey-300">
@@ -76,24 +74,16 @@ export default function Founders() {
             <div
               key={founder.id}
               className={`flex flex-col ${
-                index % 2 !== 0 ? "lg:flex-row-reverse" : "lg:flex-row"
-              } items-center gap-18 lg:gap-26`}
+                index % 2 !== 0 ? "md:flex-row-reverse" : "md:flex-row"
+              } items-center md:items-start gap-8 md:gap-16`}
             >
-              <div className="relative shrink-0 w-full md:w-1/2">
+              <div className="relative shrink-0 w-full md:max-w-1/2">
                 <Image
-                  src={founder.image[0]}
+                  src={founder.image}
                   alt={founder.name}
                   width={373}
                   height={485}
-                  className="md:hidden w-full h-auto object-cover rounded-[20px]"
-                />
-
-                <Image
-                  src={founder.image[1]}
-                  alt={founder.name}
-                  width={373}
-                  height={485}
-                  className="hidden md:inline w-full h-auto object-cover rounded-[20px]"
+                  className="w-full h-auto object-center object-cover rounded-[20px]"
                 />
 
                 {/* Name Card */}

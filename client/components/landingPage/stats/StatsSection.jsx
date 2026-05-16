@@ -3,8 +3,8 @@ import Image from "next/image";
 export default function StatsSection() {
   const stats = [
     {
-      number: "1250",
-      description: "lives Impacted"
+      number: "1,250",
+      description: "Lives Impacted"
     },
     {
       number: "7",

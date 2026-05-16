@@ -32,8 +32,7 @@ export default function FolderGrid({ folders, activeMediaType, onFolderClick }) 
               src={folder.thumbnail}
               alt={folder.title}
               fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             {activeMediaType === "Videos" && (
               <div className="absolute inset-0 flex items-center justify-center">

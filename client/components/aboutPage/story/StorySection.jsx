@@ -49,7 +49,7 @@ export default function StorySection() {
           </TextReveal>
 
           <Image
-            src="/assets/about-story-img.jpg"
+            src="https://res.cloudinary.com/diluabuwv/image/upload/v1778416639/About_Our_Story_and_Gallery_preview_yogfjx.jpg"
             alt="our story"
             width={304}
             height={229.97}

@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
+import FloatingWhatsApp from "@/components/floatingWhatsApp/floatingWhatsApp";
 
 const helixa = localFont({
   src: [
@@ -62,7 +63,9 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col">
         <Navbar />
         {children}
+        <FloatingWhatsApp />
         <Footer />
+      
       </body>
     </html>
   );

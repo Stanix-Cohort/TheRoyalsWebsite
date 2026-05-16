@@ -6,7 +6,7 @@ export default function FloatingWhatsApp() {
             <Link href="https://wa.me/2348000000000"
             target="_blank"
             rel="noopener noreferrer"
-            className="fixed bottom-6 right-6 z-50">
+            className="fixed bottom-25 right-6 z-50">
                 <div className="flex items-center gap-2 bg-[#46c756] hover:bg-[#38b54a]
                 text-white px-4 py-3 rounded-full shadow-lg transition-all duration-300
                 hover:scale-105">

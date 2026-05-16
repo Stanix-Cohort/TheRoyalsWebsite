@@ -25,7 +25,7 @@ export default function AboutSection() {
             contribute from ₦2,000 and above.
             <br />
             <br />
-            It's simple, accessible, and powerful: ₦2,000 is just the starting
+            It&apos;s simple, accessible, and powerful: ₦2,000 is just the starting
             point, but together, every contribution builds real, immediate
             impact.
             <br />
