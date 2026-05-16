@@ -22,8 +22,8 @@ export default function FloatingWhatsApp() {
                      />
                 </div>
                 {/* text */}
-                    <span className="text-sm font-medium whitespace-nowrap">
-                        chat with us
+                    <span className="hidden md:inline text-sm font-medium whitespace-nowrap">
+                        Chat with us
                     </span>
 
 

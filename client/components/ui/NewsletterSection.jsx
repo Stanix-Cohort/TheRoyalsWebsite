@@ -26,6 +26,24 @@ export default function NewsletterSection({ bgVariant = "blue" }) {
     urgent: "secondaryGreen",
   };
 
+  const [errors, setErrors] = useState({ fullName: "", email: "" });
+
+  const validateFullName = (val) => {
+    if (val.trim() === "") return "Full name is required.";
+    return "";
+  };
+
+  const validateEmail = (val) => {
+    if (val.trim() === "") return "Email address is required.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) return "Please enter a valid email format (e.g. name@example.com).";
+    return "";
+  };
+
+  const handleBlur = (field) => {
+    if (field === "fullName") setErrors((prev) => ({ ...prev, fullName: validateFullName(fullName) }));
+    if (field === "email") setErrors((prev) => ({ ...prev, email: validateEmail(email) }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!consent) return;
@@ -38,6 +56,7 @@ export default function NewsletterSection({ bgVariant = "blue" }) {
         setFullName("");
         setEmail("");
         setConsent(false);
+        setErrors({ fullName: "", email: "" });
       } else {
         setStatus("error");
       }
@@ -68,23 +87,37 @@ export default function NewsletterSection({ bgVariant = "blue" }) {
             <form onSubmit={handleSubmit} className="flex flex-col items-center gap-[44.2px]">
               <div className="flex flex-col gap-[20px] w-full items-center">
                 <div className="flex flex-col items-center gap-[13px] w-full">
-                  <input
-                    type="text"
-                    required
-                    value={fullName}
-                    onChange={(e) => setFullName(e.target.value)}
-                    placeholder="Full Name"
-                    className="w-full md:max-w-[581.1px] lg:max-w-[771px] outline-none rounded-[7.8px] p-[13px] leading-[150%] tracking-[0.2%] text-[15px] text-grey-900 placeholder:text-grey-900 bg-white/10 border border-white/5 focus:bg-white/20 transition-all duration-300"
-                  />
+                  <div className="w-full md:max-w-[581.1px] lg:max-w-[771px] flex flex-col gap-1">
+                    <input
+                      type="text"
+                      required
+                      value={fullName}
+                      onChange={(e) => {
+                        setFullName(e.target.value);
+                        if (errors.fullName) setErrors((prev) => ({ ...prev, fullName: "" }));
+                      }}
+                      onBlur={() => handleBlur("fullName")}
+                      placeholder="Full Name"
+                      className={`w-full outline-none rounded-[7.8px] p-[13px] leading-[150%] tracking-[0.2%] text-[15px] text-grey-900 placeholder:text-grey-900 bg-white/10 border ${errors.fullName ? "border-[#ff8a8a]" : "border-white/5"} focus:bg-white/20 transition-all duration-300`}
+                    />
+                    {errors.fullName && <span className="text-[#ff8a8a] text-[13px] px-1">{errors.fullName}</span>}
+                  </div>
 
-                  <input
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Email Address"
-                    className="w-full md:max-w-[581.1px] lg:max-w-[771px] outline-none rounded-[7.8px] p-[13px] leading-[150%] tracking-[0.2%] text-[15px] text-grey-900 placeholder:text-grey-900 bg-white/10 border border-white/5 focus:bg-white/20 transition-all duration-300"
-                  />
+                  <div className="w-full md:max-w-[581.1px] lg:max-w-[771px] flex flex-col gap-1">
+                    <input
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                        if (errors.email) setErrors((prev) => ({ ...prev, email: "" }));
+                      }}
+                      onBlur={() => handleBlur("email")}
+                      placeholder="Email Address"
+                      className={`w-full outline-none rounded-[7.8px] p-[13px] leading-[150%] tracking-[0.2%] text-[15px] text-grey-900 placeholder:text-grey-900 bg-white/10 border ${errors.email ? "border-[#ff8a8a]" : "border-white/5"} focus:bg-white/20 transition-all duration-300`}
+                    />
+                    {errors.email && <span className="text-[#ff8a8a] text-[13px] px-1">{errors.email}</span>}
+                  </div>
                 </div>
 
                 <div className="flex items-center gap-2 max-w-[771px] w-full px-2">
@@ -132,7 +165,7 @@ export default function NewsletterSection({ bgVariant = "blue" }) {
 
               <Button
                 type="submit"
-                disabled={isSubmitting || !consent}
+                disabled={isSubmitting || !consent || fullName.trim() === "" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)}
                 label={isSubmitting ? "Subscribing..." : "Subscribe Now"}
                 variant={buttonVariants[bgVariant] || buttonVariants.blue}
                 icon={isSubmitting ? "tabler:loader-2" : "tabler:arrow-right"}
@@ -144,6 +177,14 @@ export default function NewsletterSection({ bgVariant = "blue" }) {
 
         {status === "success" && (
           <div className="flex flex-col items-center justify-center py-10 text-center animate-in fade-in zoom-in duration-500">
+            <div className="relative w-24 h-24 mb-8">
+                <Image 
+                  src="/Icons/success.svg"
+                  alt="Error"
+                  fill
+                  className="object-contain"
+                />
+              </div>
              <h2 className="leading-[120%] tracking-[-5%] text-center text-[41px] md:text-[51px] font-black text-white mb-6">
                 Subscription Successful
               </h2>

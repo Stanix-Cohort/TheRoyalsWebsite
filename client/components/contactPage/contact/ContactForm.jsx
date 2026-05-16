@@ -109,13 +109,46 @@ function ContactFormContent() {
   }
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState({ fullName: "", email: "", phone: "", message: "" });
+
+  const validateFullName = (val) => {
+    if (val.trim() === "") return "Full name is required.";
+    return "";
+  };
+
+  const validateEmail = (val) => {
+    if (val.trim() === "") return "Email address is required.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) return "Please enter a valid email format (e.g. name@example.com).";
+    return "";
+  };
+
+  const validatePhone = (val) => {
+    if (val.trim() !== "" && !/^[+]?[\d\s-]{7,15}$/.test(val)) {
+      return "Please enter a valid phone number.";
+    }
+    return "";
+  };
+
+  const validateMessage = (val) => {
+    if (val.trim() === "") return "Message is required.";
+    return "";
+  };
+
+  const handleBlur = (field) => {
+    if (field === "fullName") setErrors((prev) => ({ ...prev, fullName: validateFullName(fullName) }));
+    if (field === "email") setErrors((prev) => ({ ...prev, email: validateEmail(email) }));
+    if (field === "phone") setErrors((prev) => ({ ...prev, phone: validatePhone(phone) }));
+    if (field === "message") setErrors((prev) => ({ ...prev, message: validateMessage(message) }));
+  };
 
   // Check if all required fields are filled
   const isFormValid =
     fullName.trim() !== "" &&
     email.trim() !== "" &&
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) &&
     enquiryType !== null &&
-    message.trim() !== "";
+    message.trim() !== "" &&
+    (!phone || /^[+]?[\d\s-]{7,15}$/.test(phone));
 
   const handleSelectType = (type) => {
     // If there's already a selected type and the message has been modified
@@ -134,6 +167,7 @@ function ContactFormContent() {
   const applySelection = (type) => {
     setEnquiryType(type);
     setMessage(type.defaultMessage.join("\n\n"));
+    if (errors.message) setErrors((prev) => ({ ...prev, message: "" }));
   };
 
   const handleConfirmReplace = () => {
@@ -182,6 +216,7 @@ function ContactFormContent() {
     setEnquiryType(enquiryTypes[0]);
     setMessage(enquiryTypes[0].defaultMessage.join("\n\n"));
     setFormState(FORM_STATE.IDLE);
+    setErrors({ fullName: "", email: "", phone: "", message: "" });
   };
 
   return (
@@ -288,9 +323,14 @@ function ContactFormContent() {
                 id="fullName"
                 placeholder="Your Full Name"
                 value={fullName}
-                onChange={(e) => setFullName(e.target.value)}
-                className="h-[50px] border border-grey-100 rounded-[8px] px-[20px] !leading-[140%] !text-[16px] placeholder:text-grey-200 placeholder:opacity-[50%] bg-white"
+                onChange={(e) => {
+                  setFullName(e.target.value);
+                  if (errors.fullName) setErrors((prev) => ({ ...prev, fullName: "" }));
+                }}
+                onBlur={() => handleBlur("fullName")}
+                className={`h-[50px] border ${errors.fullName ? "border-error-500" : "border-grey-100"} rounded-[8px] px-[20px] !leading-[140%] !text-[16px] placeholder:text-grey-200 placeholder:opacity-[50%] bg-white outline-none focus:border-grey-300 transition-colors duration-200`}
               />
+              {errors.fullName && <span className="text-error-600 text-[13px] -mt-1">{errors.fullName}</span>}
             </div>
 
             <div className="flex flex-col gap-[13px] w-full">
@@ -308,9 +348,14 @@ function ContactFormContent() {
                 id="emailAddress"
                 placeholder="Your Email Address"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="h-[50px] border border-grey-100 rounded-[8px] px-[20px] !leading-[140%] !text-[16px] placeholder:text-grey-200 placeholder:opacity-[50%] bg-white"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  if (errors.email) setErrors((prev) => ({ ...prev, email: "" }));
+                }}
+                onBlur={() => handleBlur("email")}
+                className={`h-[50px] border ${errors.email ? "border-error-500" : "border-grey-100"} rounded-[8px] px-[20px] !leading-[140%] !text-[16px] placeholder:text-grey-200 placeholder:opacity-[50%] bg-white outline-none focus:border-grey-300 transition-colors duration-200`}
               />
+              {errors.email && <span className="text-error-600 text-[13px] -mt-1">{errors.email}</span>}
             </div>
           </div>
 
@@ -329,9 +374,14 @@ function ContactFormContent() {
                 id="phoneNumber"
                 placeholder="Enter Your Phone Number"
                 value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                className="h-[50px] border border-grey-100 rounded-[8px] px-[20px] !leading-[140%] !text-[16px] placeholder:text-grey-200 placeholder:opacity-[50%] bg-white"
+                onChange={(e) => {
+                  setPhone(e.target.value);
+                  if (errors.phone) setErrors((prev) => ({ ...prev, phone: "" }));
+                }}
+                onBlur={() => handleBlur("phone")}
+                className={`h-[50px] border ${errors.phone ? "border-error-500" : "border-grey-100"} rounded-[8px] px-[20px] !leading-[140%] !text-[16px] placeholder:text-grey-200 placeholder:opacity-[50%] bg-white outline-none focus:border-grey-300 transition-colors duration-200`}
               />
+              {errors.phone && <span className="text-error-600 text-[13px] -mt-1">{errors.phone}</span>}
             </div>
 
             <div className="w-full">
@@ -345,7 +395,7 @@ function ContactFormContent() {
                   value={enquiryType}
                   onChange={handleSelectType}
                 >
-                  <ListboxButton className="flex justify-between items-center w-full h-[50px] rounded-[8px] border border-grey-100 px-[20px] bg-white">
+                  <ListboxButton className="flex justify-between items-center w-full h-[50px] rounded-[8px] border border-grey-100 px-[20px] bg-white outline-none focus:border-grey-300 transition-colors duration-200">
                     {({ open }) => (
                       <>
                         <span className="!leading-[140%] !text-[16px] text-grey-400">
@@ -364,7 +414,7 @@ function ContactFormContent() {
                     modal={false}
                     anchor="bottom start"
                     transition
-                    className="w-(--button-width) [--anchor-gap:4px] focus:outline-none shadow-md border border-grey-50 rounded-[8px] bg-white origin-top transition duration-200 ease-out data-closed:scale-95 data-closed:opacity-0"
+                    className="w-(--button-width) [--anchor-gap:4px] focus:outline-none shadow-md border border-grey-50 rounded-[8px] bg-white origin-top transition duration-200 ease-out data-closed:scale-95 data-closed:opacity-0 z-10"
                   >
                     {enquiryTypes.map((type) => (
                       <ListboxOption
@@ -395,9 +445,14 @@ function ContactFormContent() {
               id="message"
               placeholder="Tell us how we can help..."
               value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              className="resize-none h-[148px] border border-grey-100 rounded-[8px] p-[20px] !leading-[140%] !text-[16px] placeholder:text-grey-200 placeholder:opacity-[50%] bg-white"
+              onChange={(e) => {
+                setMessage(e.target.value);
+                if (errors.message) setErrors((prev) => ({ ...prev, message: "" }));
+              }}
+              onBlur={() => handleBlur("message")}
+              className={`resize-none h-[148px] border ${errors.message ? "border-error-500" : "border-grey-100"} rounded-[8px] p-[20px] !leading-[140%] !text-[16px] placeholder:text-grey-200 placeholder:opacity-[50%] bg-white outline-none focus:border-grey-300 transition-colors duration-200`}
             />
+            {errors.message && <span className="text-error-600 text-[13px] -mt-1">{errors.message}</span>}
           </div>
         </>
       )}

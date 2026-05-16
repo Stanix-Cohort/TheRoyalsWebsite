@@ -25,8 +25,8 @@ export const EmailLayout = ({ previewText, children }) => (
             <tr>
               <td style={headerContent}>
                 <Img
-                  src={`${baseUrl}/assets/the-royal-logo-white.png`}
-                  width="160"
+                  src="https://res.cloudinary.com/diluabuwv/image/upload/v1778557909/The_Royals_Logo_Black_Variant_jxgbqr.svg"
+                  width="120"
                   alt="The Royals"
                   style={logo}
                 />
@@ -34,7 +34,7 @@ export const EmailLayout = ({ previewText, children }) => (
               <td align="right" style={patternCell}>
                 <Img
                   src={`${baseUrl}/assets/mission-card-pattern-tablet-and-desktop-view.svg`}
-                  width="180"
+                  width="120"
                   alt=""
                   style={pattern}
                 />
@@ -51,6 +51,16 @@ export const EmailLayout = ({ previewText, children }) => (
         {/* Shared Footer Section */}
         <Section style={footerSection}>
           <table width="100%" border="0" cellPadding="0" cellSpacing="0">
+            <tr>
+              <td style={{ paddingBottom: "24px" }}>
+                <Img
+                  src="https://res.cloudinary.com/diluabuwv/image/upload/v1778557909/The_Royals_Logo_Black_Variant_jxgbqr.svg"
+                  width="100"
+                  alt="The Royals"
+                  style={logo}
+                />
+              </td>
+            </tr>
             <tr>
               <td style={footerTextContainer}>
                 <div style={footerText}>
@@ -99,10 +109,8 @@ export const EmailLayout = ({ previewText, children }) => (
 );
 
 const main = {
-  backgroundColor: "#f4f4f4",
   fontFamily:
     '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
-  padding: "40px 0",
 };
 
 const container = {
@@ -116,12 +124,12 @@ const container = {
 
 const headerSection = {
   backgroundColor: "#5D75D4",
-  height: "140px",
+  height: "100px",
   overflow: "hidden",
 };
 
 const headerContent = {
-  padding: "40px 0 40px 48px",
+  padding: "20px 0 20px 20px",
   verticalAlign: "middle",
 };
 
@@ -137,17 +145,17 @@ const logo = {
 
 const pattern = {
   display: "block",
-  height: "140px",
+  height: "100px",
   opacity: "0.4",
 };
 
 const contentSection = {
-  padding: "48px",
+  padding: "32px 20px",
 };
 
 const footerSection = {
   backgroundColor: "#EEF2FF",
-  padding: "40px 48px",
+  padding: "32px 20px",
   textAlign: "left",
 };
 

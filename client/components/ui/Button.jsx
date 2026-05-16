@@ -63,7 +63,9 @@ export default function Button({
     </>
   );
 
-  const combinedClasses = `${baseStyles} ${variants[variant]} ${paddingStyles} ${className}`;
+  const combinedClasses = `${baseStyles} ${variants[variant]} ${paddingStyles} ${className} ${
+    props.disabled ? "opacity-50 cursor-not-allowed pointer-events-none" : ""
+  }`;
 
   if (href) {
     return (
