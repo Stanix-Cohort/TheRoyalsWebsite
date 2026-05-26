@@ -24,7 +24,7 @@ export default function PartnersSection() {
           {partners.map((partner, index) => (
             <div 
               key={index} 
-              className="flex items-center p-4 justify-center rounded-2xl border border-grey-50 h-40 shadow-sm w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]"
+              className="flex items-center p-4 justify-center rounded-2xl border border-grey-50 h-40 border border-grey-50 w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]"
             >
               <div className={`relative w-full h-full flex items-center justify-center rounded-xl overflow-hidden ${partner.bgColor === "bg-white" ? "" : partner.bgColor}`}>
                 <Image 

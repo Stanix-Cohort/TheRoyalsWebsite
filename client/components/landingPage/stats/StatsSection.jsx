@@ -41,7 +41,7 @@ export default function StatsSection() {
                   <h3 className="text-white font-black">
                     {stat.number}
                   </h3>
-                  <div className="space-y-2 font-bold text-xl">
+                  <div className="space-y-2 text-xl">
                     <p className="">{stat.description}</p>
                   </div>
                 </div>
@@ -53,12 +53,12 @@ export default function StatsSection() {
           <div className="w-full lg:w-1/2 relative group">
             <div className="absolute -inset-4 bg-white/5 rounded-3xl blur-2xl group-hover:bg-white/10 transition-colors duration-500"></div>
             <div className="relative overflow-hidden">
-              <Image 
-                src="/assets/grid-image.png" 
-                alt="Impact communities" 
-                width={800} 
-                height={800} 
-                className="w-full h-auto object-cover" 
+              <Image
+                src="/assets/grid-image.png"
+                alt="Impact communities"
+                width={800}
+                height={800}
+                className="w-full h-auto object-cover"
               />
             </div>
           </div>

@@ -27,9 +27,9 @@ export default function Button({
   };
 
   const iconCircleVariants = {
-    primary: "bg-blue-800", // Dark blue
-    secondary: "bg-blue-800",
-    secondaryBlue: "bg-blue-800",
+    primary: "bg-grey-800", // Dark blue
+    secondary: "bg-grey-800",
+    secondaryBlue: "bg-grey-800",
     secondaryGreen: "bg-green-600",
     secondaryPurple: "bg-purple-900",
     green: "bg-green-300",

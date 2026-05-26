@@ -38,7 +38,7 @@ export default function CurvedMarquee() {
       ref={containerRef}
     >
       {/* Horizontal Hanger Line */}
-      <div className="absolute top-2 left-0 w-full h-[1.5px] bg-white/40 pointer-events-none z-0" />
+      <div className="absolute top-4 left-0 w-full h-[1.5px] bg-white/20 pointer-events-none z-0" />
 
       {/* The scrolling track */}
       <div ref={marqueeRef} className="flex w-max">
@@ -51,15 +51,15 @@ export default function CurvedMarquee() {
                 className="relative w-[250px] h-[250px] flex-shrink-0 will-change-transform"
               >
                 {/* The Polaroid Card */}
-                <div className="relative w-full h-full bg-white rounded-4xl p-2 shadow-4xl flex flex-col items-center">
+                <div className="relative w-full h-full bg-white rounded-4xl p-1 shadow-4xl flex flex-col items-center">
                   
                   {/* Tape/Pin element at the top */}
-                  <div className="absolute -top-9 bg-white/90 backdrop-blur-sm w-10 h-12 rounded-sm shadow-sm flex justify-center z-10 border border-grey-50">
+                  <div className="absolute -top-8 bg-white/90 backdrop-blur-sm w-10 h-12 rounded-sm shadow-sm flex justify-center z-10 border border-grey-50">
                     <div className="w-2 h-2 mt-2 rounded-full bg-grey-300 "></div>
                   </div>
                   
                   {/* Image Container */}
-                  <div className="relative w-full h-full rounded-3xl overflow-hidden bg-grey-100">
+                  <div className="relative w-full h-full rounded-4xl overflow-hidden bg-grey-100">
                     <Image
                       src={src}
                       alt={`Impact story ${i + 1}`}

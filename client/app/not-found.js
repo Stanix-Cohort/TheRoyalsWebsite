@@ -1,6 +1,9 @@
 import Image from 'next/image';
 import { Icon } from '@iconify/react';
 import Button from '@/components/ui/Button';
+export const metadata = {
+  title: "404- not-found",
+};
 export default function NotFound() {
     return(
             <section className='flex flex-col md:flex-row justify-between items-center 
