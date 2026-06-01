@@ -3,7 +3,7 @@ import ImpactCard from "./ImpactCard";
 export default function ImpactSection() {
   const impacts = [
     {
-      tagSvg: "/patterns/education-empowerment.png",
+      tagSvg: "/patterns/community-support.png",
       title: "Clothe A BoyChild Initiative (CABI)",
       description: "Providing school uniforms, materials, and support to underprivileged boys to ensure they have equal access to education without the barrier of inadequate resources.",
       bgColor: "bg-purple-100",
@@ -11,7 +11,7 @@ export default function ImpactSection() {
       href: "/initiatives/cabi"
     },
     {
-      tagSvg: "/patterns/community-support.png",
+      tagSvg: "/patterns/education-empowerment.png",
       title: "Urgent 2K Campaign",
       description: "A rapid response fundraising campaign to address immediate community needs, from medical emergencies to educational support, one contribution at a time.",
       bgColor: "bg-green-100",

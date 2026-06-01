@@ -26,7 +26,7 @@ export default function PartnersSection() {
               key={index} 
               className="flex items-center p-4 justify-center rounded-2xl border border-grey-50 h-40 border border-grey-50 w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]"
             >
-              <div className={`relative w-full h-full flex items-center justify-center rounded-xl overflow-hidden ${partner.bgColor === "bg-white" ? "" : partner.bgColor}`}>
+              <div className={`relative w-full h-full flex items-center justify-center rounded-xl overflow-hidden`}>
                 <Image 
                   src={partner.logo} 
                   alt={partner.name} 

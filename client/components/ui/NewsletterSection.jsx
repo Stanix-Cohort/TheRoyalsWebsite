@@ -151,14 +151,14 @@ export default function NewsletterSection({ bgVariant = "blue" }) {
                     htmlFor="privacy-policy"
                     className="leading-[150%] tracking-[0.2%] text-[13px] md:text-[15px] text-grey-50"
                   >
-                    I have read the{" "}
+                   I have read the {" "}
                     <Link
                       href="/privacy-policy"
                       className="underline hover:text-white transition-colors"
                     >
                       Privacy Policy
                     </Link>{" "}
-                    and consent to receive email updates from The Royals.
+                    and consent to receive email updates from The Royals and understand I can unsubscribe at any time.
                   </label>
                 </div>
               </div>
