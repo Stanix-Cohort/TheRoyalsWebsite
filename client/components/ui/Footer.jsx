@@ -1,171 +1,239 @@
-'use client'
+"use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
+import Image from "next/image";
+import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { Logo } from "./Logo";
 
 const QUICK_LINKS = [
-  { label: 'Home', href: '/' },
-  { label: 'About Us', href: '/about' },
-  { label: 'Gallery', href: '/gallery' },
-  { label: 'Contact', href: '/contact' },
-  { label: 'Privacy Policy', href: '/privacy-policy' },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Contact", href: "/contact" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
 ];
 
 const INITIATIVES = [
-  { label: 'Clothe A BoyChild Initiative (CABI)', href: '/initiatives/cabi' },
-  { label: 'Urgent 2K Campaign', href: '/initiatives/urgent-2k' },
+  { label: "Clothe A BoyChild Initiative (CABI)", href: "/initiatives/cabi" },
+  { label: "Urgent 2K Campaign", href: "/initiatives/urgent-2k" },
 ];
 
 const CONTACT_INFO = [
-  { 
-    icon: 'formkit:email', 
-    content: 'hello.theroyals@gmail.com', 
-    href: 'mailto:hello.theroyals@gmail.com' 
+  {
+    icon: "formkit:email",
+    content: "hello.theroyals@gmail.com",
+    href: "mailto:hello.theroyals@gmail.com",
+    srLabel: "Email us at hello.theroyals@gmail.com",
   },
-  { 
-    icon: 'proicons:call', 
-    content: '+234 701 099 0908', 
-    href: 'tel:+2347010990908',
-    isSmall: true
+  {
+    icon: "proicons:call",
+    content: "+2347010990908",
+    href: "tel:+2347010990908",
+    srLabel: "Call us on +234 701 099 0908",
   },
-  { 
-    icon: 'ic:outline-whatsapp', 
-    content: '+234 816 652 7163', 
-    href: 'https://wa.me/2348166527163',
+  {
+    icon: "ic:outline-whatsapp",
+    content: "+2348166527163",
+    href: "https://wa.me/2348166527163",
     isExternal: true,
-    isSmall: true
+    srLabel: "Message us on WhatsApp at +234 816 652 7163",
   },
-  { 
-    icon: 'boxicons:location', 
-    content: (
-      <span>
-        19, Olanrewaju Street, Off <br />
-        Orile Road, Tabon-Tabon, <br /> Agege, Lagos, Nigeria.
-      </span>
-    ),
-    isAddress: true
+  {
+    icon: "boxicons:location",
+    content:
+      "19, Olanrewaju Street, Off Orile Road, Tabon-Tabon, Agege, Lagos, Nigeria.",
   },
 ];
 
-const SOCIAL_LINKS = [
-  { icon: 'mynaui:youtube-solid', href: '#' },
-  { icon: 'mdi:linkedin', href: '#' },
-  { icon: 'prime:twitter', href: '#' },
-  { icon: 'ri:instagram-fill', href: '#' },
-];
+// const SOCIAL_LINKS = [
+//   { icon: "mynaui:youtube-solid", href: "#", label: "YouTube" },
+//   { icon: "mdi:linkedin", href: "#", label: "LinkedIn" },
+//   { icon: "prime:twitter", href: "#", label: "X" },
+//   { icon: "ri:instagram-fill", href: "#", label: "Instagram" },
+// ];
 
 export default function Footer() {
-    const currentYear = new Date().getFullYear();
-    
-    return(
-        <footer className='section bg-grey-900 text-white'>
-            <div className='flex justify-end mb-32 max-w-7xl mx-auto'>
-                 <h1 className='text-6xl md:text-8xl font-medium flex items-baseline gap-2'>
-                      Get Involved
-                     <span className='block w-3 h-3 bg-blue-300 rounded-full translate-y-[-2px]'></span>
-                 </h1>
-            </div>
+  const currentYear = new Date().getFullYear();
 
-            {/* Main Grid */}
-            <div className='max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 md:gap-24 mb-24'>
+  return (
+    <footer
+      className="section !pt-[87px] !pb-[24.22px] md:!pb-[37.8px] lg:!pb-[52.67px]
+        bg-(--color-footer) text-white"
+    >
+      <h1
+        className="mb-[110px] md:mb-[98.01px] lg:mb-[166px] text-right !leading-[100%]
+          !tracking-[-4%] !text-[60px] md:!text-[100px] !font-bold text-white"
+      >
+        Get Involved
+        <span className="text-blue-200">.</span>
+      </h1>
 
-                 {/* Logo Section */}
-                 <div className='col-span-1 md:col-span-2 lg:col-span-1 space-y-6 '>
-                    <div className='relative h-[60px]'>
-                        <Logo variant="white" height="100%" width="auto" />
-                    </div>
-                    <p className='text-grey-50'>
-                        Empowering communities through education, mentorship, and sustainable development initiatives.
-                    </p>
-                 </div>
+      {/* Grid */}
+      <div
+        className="grid md:grid-cols-2 lg:grid-cols-[1.5fr_0.95fr_1.3fr_1.1fr]
+          gap-x-8 gap-y-20 md:gap-y-14"
+      >
+        {/* Brand */}
+        <div className="md:col-span-2 lg:col-span-1 flex flex-col gap-[17px]">
+          <div className="w-[163px] h-[57.99px]">
+            <Logo variant="white" width="100%" height="100%" />
+          </div>
 
-                {/* Footer Quick Links */}
-                <div className='flex flex-col'>
-                    <h5 className='mb-6'>Quick Links</h5>
-                    <ul className='space-y-3'>
-                        {QUICK_LINKS.map((link) => (
-                            <li key={link.label}>
-                                <Link href={link.href} className='hover:text-blue-300 text-[0.938rem] text-grey-50 transition'>
-                                    {link.label}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+          <p
+            className="max-w-[314px] md:max-w-[1021px] lg:max-w-[314px] !leading-[150%]
+              !tracking-[0.2%] !text-[15px] text-grey-50"
+          >
+            Empowering communities through education, mentorship, and
+            sustainable development initiatives.
+          </p>
+        </div>
 
-                {/* Initiatives */}
-                <div className='flex flex-col'>
-                    <h5 className='mb-6'>Our initiatives</h5>
-                    <ul className='space-y-4'>
-                        {INITIATIVES.map((item) => (
-                            <li key={item.label}>
-                                <Link href={item.href} className='hover:text-blue-300 text-[0.938rem] text-grey-50 transition'>
-                                    {item.label}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+        {/* Quick Links */}
+        <nav
+          aria-labelledby="footer-quick-links"
+          className="flex flex-col gap-[17px]"
+        >
+          <h3
+            id="footer-quick-links"
+            className="!leading-[120%] !tracking-[-5%] !text-[21px] !font-black
+              text-white"
+          >
+            Quick Links
+          </h3>
 
-                {/* Contact channels*/}
-                <div className='col-span-1 md:col-span-2 lg:col-span-1 flex flex-col'>
-                    <h5 className='mb-6'>Get in Touch</h5>
-                    <ul className='space-y-4 text-grey-50'>
-                        {CONTACT_INFO.map((info, idx) => (
-                            <li key={idx} className='flex items-start gap-3 mt-1'>
-                                <Icon 
-                                    icon={info.icon} 
-                                    className={`text-grey-50 ${info.isAddress ? 'mb-5' : ''}`} 
-                                    width="20" 
-                                />
-                                {info.href ? (
-                                    <a 
-                                        href={info.href} 
-                                        target={info.isExternal ? "_blank" : undefined}
-                                        rel={info.isExternal ? "noopener noreferrer" : undefined}
-                                        className={`hover:text-blue-300 transition ${info.isSmall ? 'text-[0.938rem]' : ''}`}
-                                    >
-                                        {info.content}
-                                    </a>
-                                ) : (
-                                    <span className={info.isSmall ? 'text-[0.938rem]' : ''}>
-                                        {info.content}
-                                    </span>
-                                )}
-                            </li>
-                        ))}
-                    </ul>
+          <ul className="flex flex-col gap-[10px]">
+            {QUICK_LINKS.map(({ label, href }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className="leading-[150%] tracking-[0.2%] text-[15px] text-grey-50
+                    transition-colors duration-150 hover:text-blue-300"
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-                    {/* Horizontal Icons */}
-                    <div className='flex flex-row justify-start mt-8 gap-3.5'>
-                        {SOCIAL_LINKS.map((social, idx) => (
-                            <Link key={idx} href={social.href} className="hover:text-blue-500 transition">
-                                <Icon icon={social.icon} width="20" />
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-            </div>
+        {/* Initiatives */}
+        <nav
+          aria-labelledby="footer-initiatives"
+          className="flex flex-col gap-[17px]"
+        >
+          <h3
+            id="footer-initiatives"
+            className="!leading-[120%] !tracking-[-5%] !text-[21px] !font-black
+              text-white"
+          >
+            Our Initiatives
+          </h3>
 
-            {/* Copy rights */}
-            <p className='text-grey-50 mt-16 text-center'>@ {currentYear} The Royals. All rights reserved</p>
-            
-            <div className='w-full flex justify-start mt-10'>
-                {/* Colorful shapes at the footer bottom  */}
-                <div className='flex justify-left w-full'>
-                    <div className='relative w-[450px] h-[60px] max-w-full'>
-                        <Image
-                            src="/assets/footer-image.png"
-                            alt='Decorative Shapes'
-                            fill
-                            sizes="(max-width: 768px) 100vw, 450px"
-                            className='object-contain'
-                        />
-                    </div>
-                </div>
-            </div>            
-        </footer>
-    );
+          <ul className="flex flex-col gap-[10px]">
+            {INITIATIVES.map(({ label, href }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className="leading-[150%] tracking-[0.2%] text-[15px] text-grey-50
+                    transition-colors duration-150 hover:text-blue-300"
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        {/* Contact */}
+        <div className="md:col-span-2 lg:col-span-1 flex flex-col gap-[17px]">
+          <h3
+            className="!leading-[120%] !tracking-[-5%] !text-[21px] !font-black
+              text-white"
+          >
+            Get in Touch
+          </h3>
+
+          <div className="flex flex-col gap-[34px]">
+            <address className="not-italic">
+              <ul className="flex flex-col gap-[10px]">
+                {CONTACT_INFO.map(
+                  ({ icon, content, href, isExternal, srLabel }) => (
+                    <li key={content} className="flex gap-[10px]">
+                      <Icon
+                        icon={icon}
+                        className="shrink-0 text-white"
+                        width="20"
+                      />
+
+                      {href ? (
+                        <Link
+                          href={href}
+                          className="!leading-[150%] !tracking-[0.2%] !text-[15px]
+                            text-grey-50 transition-colors duration-150
+                            hover:text-blue-300"
+                          {...(isExternal
+                            ? { target: "_blank", rel: "noopener noreferrer" }
+                            : null)}
+                        >
+                          <span aria-hidden="true">{content}</span>
+                          <span className="sr-only">{srLabel ?? content}</span>
+                        </Link>
+                      ) : (
+                        <span
+                          className="!leading-[150%] !tracking-[0.2%] !text-[15px]
+                            text-grey-50"
+                        >
+                          {content}
+                        </span>
+                      )}
+                    </li>
+                  ),
+                )}
+              </ul>
+            </address>
+
+            {/* Social Icons */}
+            {/* <div className="flex items-center gap-[10px]">
+              {SOCIAL_LINKS.map(({ icon, href, label }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`The Royals on ${label}`}
+                  className="text-white transition-colors duration-150
+                    hover:text-blue-300"
+                >
+                  <Icon icon={icon} width="20" />
+                </Link>
+              ))}
+            </div> */}
+          </div>
+        </div>
+      </div>
+
+      {/* Copyright */}
+      <p
+        className="mt-[88px] md:mt-[62px] lg:mt-[88px] !leading-[150%] !tracking-[0.2%]
+          text-center !text-[15px] text-grey-50"
+      >
+        &copy; {currentYear} The Royals. All rights reserved.
+      </p>
+
+      {/* Colorful shapes at the footer bottom  */}
+      <div
+        className="relative max-w-[367px] md:max-w-[656px] lg:max-w-[799px] h-[48.79px]
+          md:h-[87.2px] lg:h-[106.21px] mx-auto md:mx-0 mt-[85px] md:mt-0 lg:mt-[33.01px]"
+        aria-hidden="true"
+      >
+        <Image
+          src="/assets/footer-image.svg"
+          alt="Decorative Shapes"
+          fill
+          sizes="(min-width: 1024px) 799px, (min-width: 768px) 656px, 367px"
+          className="object-contain"
+        />
+      </div>
+    </footer>
+  );
 }

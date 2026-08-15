@@ -73,6 +73,9 @@
 
   /* Error Red */
   --color-error-600: #d92d20;
+
+  /* Footer background */
+  --color-footer: #04070d;
 }
 
 body {
@@ -100,26 +103,25 @@ h6 {
 }
 
 h1 {
-  @apply  text-[3.188rem] md:text-[5.25rem] font-black md:font-bold;
+  @apply text-[3.188rem] md:text-[5.25rem] font-black md:font-bold;
   line-height: 1.05;
   letter-spacing: -0.03em;
-  
 }
 
 h2 {
-  @apply font-black text-[2.563rem] md:text-[3.188rem]
+  @apply font-black text-[2.563rem] md:text-[3.188rem];
 }
 
 h3 {
-  @apply font-black text-[2rem] md:text-[2.375rem]
+  @apply font-black text-[2rem] md:text-[2.375rem];
 }
 
 h4 {
-  @apply text-[1.5rem] 
+  @apply text-[1.5rem];
 }
 
 h5 {
-  @apply text-[1.5rem] font-black
+  @apply text-[1.5rem] font-black;
 }
 
 h6 {
