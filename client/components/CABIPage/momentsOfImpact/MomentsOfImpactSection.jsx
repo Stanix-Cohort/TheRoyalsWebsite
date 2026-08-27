@@ -35,12 +35,12 @@ const images = [
 export default function MomentsOfImpactSection() {
   return (
     <section className="section !pt-[22px] bg-white">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-col items-center gap-[19px] mb-16 md:mb-24">
           <h2
-            className="!leading-[120%] !tracking-[-5%] !text-[41px] md:!text-[51px]
-              !font-black text-grey-900"
+            className="text-center !leading-[120%] !tracking-[-5%] !text-[41px]
+              md:!text-[51px] !font-black text-grey-900"
           >
             Moments of Impact
           </h2>
