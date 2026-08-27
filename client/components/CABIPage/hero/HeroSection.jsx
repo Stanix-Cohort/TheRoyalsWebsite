@@ -2,26 +2,45 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="section !pt-50 !pb-0 !px-0 bg-white">
+    <section
+      className="section !pt-[140px] md:!pt-[184px] lg:!pt-[193px] !pb-0
+        !px-0 bg-white"
+    >
       <div className="relative overflow-hidden">
         <div className="flex flex-col gap-[19px] mb-10 !px-[1rem] md:!px-[3rem]">
-          <span className="inline-block w-fit mb-[19px] rounded-[40px] border border-grey-900 px-[26px] py-[9px] !leading-[150%] !tracking-[0.2%] !text-[15px] text-grey-900">
+          <span
+            className="inline-block w-fit mb-[19px] rounded-[40px] border
+              border-grey-900 px-[26px] py-[9px] !leading-[150%] !tracking-[0.2%]
+              !text-[15px] text-grey-900"
+          >
             Community Support & Empowerment
           </span>
 
           <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-5">
             <h1 className="flex flex-col gap-[10px] md:gap-[30px]">
-              <span className="hidden md:inline !leading-[105%] !tracking-[-4%] !text-[80px] text-grey-900">
+              <span
+                className="hidden md:inline !leading-[105%] !tracking-[-4%]
+                  !text-[80px] text-grey-900"
+              >
                 We remove barriers
               </span>{" "}
-              <span className="md:hidden !leading-[105%] !tracking-[-4%] !text-[52px] text-grey-900">
+              <span
+                className="md:hidden !leading-[105%] !tracking-[-4%] !text-[52px]
+                  text-grey-900"
+              >
                 We remove
               </span>{" "}
               <span className="inline-flex items-center gap-3">
-                <span className="inline-block md:hidden mt-[-10px] !leading-[105%] !tracking-[-4%] !text-[52px] text-grey-900">
+                <span
+                  className="inline-block md:hidden mt-[-10px] !leading-[105%]
+                    !tracking-[-4%] !text-[52px] text-grey-900"
+                >
                   barriers
                 </span>
-                <span className="inline-flex justify-center items-center w-[52px] h-[52px] rounded-full bg-purple-700">
+                <span
+                  className="inline-flex justify-center items-center w-[52px] h-[52px]
+                    rounded-full bg-purple-700"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="21"
@@ -37,11 +56,17 @@ export default function HeroSection() {
                     />
                   </svg>
                 </span>
-                <span className="inline-block md:hidden mt-[-10px] !leading-[105%] !tracking-[-4%] !text-[52px] text-grey-900">
+                <span
+                  className="inline-block md:hidden mt-[-10px] !leading-[105%]
+                    !tracking-[-4%] !text-[52px] text-grey-900"
+                >
                   to
                 </span>
 
-                <span className="hidden md:inline-block mt-[-17.5px] !leading-[105%] !tracking-[-4%] !text-[80px] text-grey-900">
+                <span
+                  className="hidden md:inline-block mt-[-17.5px] !leading-[105%]
+                    !tracking-[-4%] !text-[80px] text-grey-900"
+                >
                   to education for{" "}
                   <span className="hidden lg:inline pe-2 pb-2 text-white bg-purple-700">
                     boys.
@@ -51,19 +76,28 @@ export default function HeroSection() {
               <span className="md:hidden !leading-[123%] !text-[52px] text-grey-900">
                 education for
               </span>
-              <span className="lg:hidden w-fit pe-2 pb-2 !leading-[123%] !text-[52px] md:!text-[80px] text-white bg-purple-700">
+              <span
+                className="lg:hidden w-fit pe-2 pb-2 !leading-[123%] !text-[52px]
+                  md:!text-[80px] text-white bg-purple-700"
+              >
                 boys.
               </span>
             </h1>
 
-            <p className="md:max-w-[630.31px] lg:max-w-[387px] !leading-[150%] !tracking-[0.2%] !text-[16px] md:!text-[19px] lg:!text-[17px] text-grey-500">
+            <p
+              className="md:max-w-[630.31px] lg:max-w-[387px] !leading-[150%]
+                !tracking-[0.2%] !text-[16px] md:!text-[19px] lg:!text-[17px] text-grey-500"
+            >
               By providing school uniforms, learning materials, and the support
               underprivileged boys need to stay in school and thrive.
             </p>
           </div>
         </div>
 
-        <div className="relative overflow-hidden w-[445px] md:w-[calc(100vw_-_24px)] h-[518px] md:h-[553px] lg:h-[618px] mx-auto md:rounded-[14px]">
+        <div
+          className="relative overflow-hidden w-[445px] md:w-[calc(100vw_-_24px)]
+            h-[518px] md:h-[553px] lg:h-[618px] mx-auto md:rounded-[14px]"
+        >
           <Image
             src="/assets/cabi-hero-image.jpg"
             alt="Clothe a boy child initiative"
@@ -77,7 +111,10 @@ export default function HeroSection() {
             aria-hidden="true"
             width={173}
             height={64.14}
-            className="absolute left-[10px] md:left-[24px] lg:left-[27px] bottom-[10px] md:bottom-[24px] lg:bottom-[27px] w-[173px] md:w-[205px] h-[64.14px] m:h-[76px] rounded-[7.6px] md:rounded-[9px] border-[2.53px] md:border-[3px] border-grey-50"
+            className="absolute left-[10px] md:left-[24px] lg:left-[27px] bottom-[10px]
+              md:bottom-[24px] lg:bottom-[27px] w-[173px] h-[64.14px]
+              rounded-[7.6px] md:rounded-[9px] border-[2.53px] md:border-[3px]
+              border-grey-50"
           />
         </div>
       </div>

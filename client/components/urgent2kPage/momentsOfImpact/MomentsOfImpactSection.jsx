@@ -8,39 +8,49 @@ const images = [
   {
     src: "/assets/u2k-moment-1.jpg",
     alt: "Teacher with students in classroom",
-    className: "col-span-2 md:col-span-1 h-[400px] md:h-[500px]"
+    className: "col-span-2 md:col-span-1 h-[400px] md:h-[500px]",
   },
   {
     src: "/assets/u2k-moment-2.jpg",
     alt: "Students lined up outside school",
-    className: "col-span-2 md:col-span-1 h-[300px] md:h-[350px]"
+    className: "col-span-2 md:col-span-1 h-[300px] md:h-[350px]",
   },
   {
     src: "/assets/u2k-moment-3.jpg",
     alt: "Students holding up school bags",
-    className: "col-span-2 max-w-3xl mx-auto w-full h-[400px] md:h-[600px]"
+    className: "col-span-2 max-w-3xl mx-auto w-full h-[400px] md:h-[600px]",
   },
   {
     src: "/assets/u2k-moment-4.jpg",
     alt: "Students with bags in classroom",
-    className: "col-span-2 md:col-span-1 h-[400px] md:h-[500px]"
+    className: "col-span-2 md:col-span-1 h-[400px] md:h-[500px]",
   },
   {
     src: "/assets/u2k-moment-5.jpg",
     alt: "Group of students holding bags",
-    className: "col-span-2 md:col-span-1 h-[300px] md:h-[350px]"
-  }
+    className: "col-span-2 md:col-span-1 h-[300px] md:h-[350px]",
+  },
 ];
 
 export default function MomentsOfImpactSection() {
   return (
-    <section className="section bg-white">
+    <section className="section !pt-[22px] bg-white">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Header */}
-        <div className="text-center mb-16 md:mb-24">
-          <h2 className="text-grey-900 mb-6">Moments of Impact</h2>
-          <p className="text-grey-400 max-w-xl mx-auto">
-            Explore highlights from our initiatives, community outreach, and the lives we are touching.
+        <div className="flex flex-col items-center gap-[19px] mb-16 md:mb-24">
+          <h2
+            className="!leading-[120%] !tracking-[-5%] !text-[41px] md:!text-[51px]
+              !font-black text-grey-900"
+          >
+            Moments of Impact
+          </h2>
+
+          <p
+            className="max-w-[330px] md:max-w-[559px] text-center !leading-[150%]
+              !tracking-[0.2%] !text-[15px] text-grey-300"
+          >
+            Explore highlights from our initiatives, community outreach, and the
+            lives we are touching.
           </p>
         </div>
 
@@ -64,11 +74,7 @@ export default function MomentsOfImpactSection() {
 
         {/* Bottom Button */}
         <div className="flex justify-center">
-          <Button 
-            label="Explore Gallery" 
-            href="/gallery" 
-            variant="green"
-          />
+          <Button label="Explore Gallery" href="/gallery" variant="green" />
         </div>
       </div>
     </section>

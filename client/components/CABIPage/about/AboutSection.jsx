@@ -1,15 +1,15 @@
 const stats = [
   { number: "1,000", title: "Lives Impacted" },
-  { number: 6, title: "Communities Reached" },
-  { number: 6, title: "Successful Programs" },
+  { number: 6, title: "Community Reached" },
+  { number: 6, title: "Successful Program" },
   { number: 20, title: "Volunteers Engaged" },
 ];
 
 export default function AboutSection() {
   return (
-    <section className="section !pb-0 bg-white">
-      <div className="flex flex-col md:flex-row md:justify-between gap-[112px] lg:gap-[0px]">
-        <h2 className="!leading-[150%] !text-[20px] text-grey-300">
+    <section className="section !px-[31px] md:!px-[39px] lg:!px-[64px] !pb-0 bg-white">
+      <div className="flex flex-col md:flex-row md:justify-between gap-[112px] md:gap-[0px]">
+        <h2 className="!leading-[150%] !text-[20px] !font-bold text-grey-300">
           About This Campaign
         </h2>
 

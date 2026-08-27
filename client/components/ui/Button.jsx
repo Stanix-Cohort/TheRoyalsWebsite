@@ -13,14 +13,14 @@ export default function Button({
   ...props
 }) {
   const baseStyles =
-    "inline-flex items-center justify-between gap-8 rounded-full whitespace-nowrap transition-all duration-300 active:scale-[0.98] group";
+    "w-fit inline-flex items-center justify-between gap-[45px] rounded-full whitespace-nowrap transition-all duration-300 active:scale-[0.98] group";
 
   const variants = {
     primary: "bg-blue-300 hover:bg-blue-400 text-white",
     secondary: "bg-white hover:bg-grey-50 text-grey-900",
     secondaryBlue: "bg-white hover:bg-grey-50 text-blue-300",
-    secondaryGreen: "bg-white hover:bg-grey-50 text-green-600",
-    secondaryPurple: "bg-white hover:bg-grey-50 text-purple-700",
+    secondaryGreen: "bg-white hover:bg-grey-50 text-grey-800",
+    secondaryPurple: "bg-white hover:bg-grey-50 text-grey-800",
     green: "bg-green-600 hover:bg-green-700 text-white",
     purple: "bg-purple-700 hover:bg-purple-800 text-white",
     hero: "bg-blue-300 hover:bg-blue-400 text-white",
@@ -31,32 +31,36 @@ export default function Button({
     secondary: "bg-grey-800",
     secondaryBlue: "bg-grey-800",
     secondaryGreen: "bg-green-600",
-    secondaryPurple: "bg-purple-900",
+    secondaryPurple: "bg-purple-700",
     green: "bg-green-300",
     purple: "bg-purple-200",
     hero: "bg-grey-800",
   };
 
-  const paddingStyles = reversed ? "pl-2 pr-8 py-2" : "pl-8 pr-2 py-2";
+  const paddingStyles = reversed
+    ? "pl-2 pr-8 py-2"
+    : "pl-[25px] pr-[10px] py-[9px]";
 
   const content = (
     <>
       {reversed ? (
         <>
           <div
-            className={`${iconCircleVariants[variant]} w-8 h-8 rounded-full shrink-0 flex items-center justify-center transition-transform`}
+            className={`${iconCircleVariants[variant]} w-[37px] h-[37px] rounded-full
+              shrink-0 flex items-center justify-center transition-transform`}
           >
-            <Icon icon={icon} width="18" className="text-white" />
+            <Icon icon={icon} width="19.3" className="text-white" />
           </div>
-          <span className="">{label}</span>
+          <span>{label}</span>
         </>
       ) : (
         <>
-          <span className="">{label}</span>
+          <span>{label}</span>
           <div
-            className={`${iconCircleVariants[variant]} w-8 h-8 rounded-full shrink-0 flex items-center justify-center transition-transform`}
+            className={`${iconCircleVariants[variant]} w-[37px] h-[37px] rounded-full
+              shrink-0 flex items-center justify-center transition-transform`}
           >
-            <Icon icon={icon} width="18" className="text-white" />
+            <Icon icon={icon} width="19.3" className="text-white" />
           </div>
         </>
       )}

@@ -19,17 +19,21 @@ export default function PartnersSection() {
   ];
 
   return (
-    <section className="section !pb-0 bg-white">
+    <section className="section !py-[74px] lg:!pt-[131.14px] lg:!pb-[84px] bg-white">
       <div className="flex flex-col gap-[50px] max-w-7xl mx-auto">
         <div className="flex flex-col items-center gap-[19px]">
           <h2
             id="partners-heading"
-            className="!leading-[120%] !tracking-[-5%] text-center !text-[41px] md:!text-[51px] !font-black text-grey-900"
+            className="!leading-[120%] !tracking-[-5%] text-center !text-[41px]
+              md:!text-[51px] !font-black text-grey-900"
           >
             Our Partners
           </h2>
 
-          <p className="max-w-[413px] !leading-[150%] !tracking-[0.2%] text-center !text-[15px] text-grey-300">
+          <p
+            className="max-w-[413px] !leading-[150%] !tracking-[0.2%] text-center
+              !text-[15px] text-grey-300"
+          >
             Collaborating with organizations that share our vision for community
             empowerment.
           </p>
@@ -42,7 +46,8 @@ export default function PartnersSection() {
           {partners.map((partner) => (
             <li
               key={partner.name}
-              className={`flex justify-center items-center h-[136px] ${partner.radius} border border-blue-50 bg-white`}
+              className={`flex justify-center items-center h-[136px] ${partner.radius}
+                border border-blue-50 bg-white`}
             >
               <Image
                 src={partner.logo.path}
@@ -56,7 +61,8 @@ export default function PartnersSection() {
 
         <Link
           href="/contact"
-          className="self-center inline-flex items-center gap-[45px] w-fit py-[9px] ps-[25px] pe-[10px] rounded-full bg-purple-700"
+          className="self-center inline-flex items-center gap-[45px] w-fit py-[9px]
+            ps-[25px] pe-[10px] rounded-full bg-purple-700"
         >
           <span className="!leading-[150%] !tracking-[0.2%] !text-[15px] text-white">
             Support Our Mission

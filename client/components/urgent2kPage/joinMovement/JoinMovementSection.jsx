@@ -1,7 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
-import { ArrowRight } from "lucide-react";
 
 const cards = [
   {
@@ -104,14 +102,23 @@ const cards = [
 
 export default function JoinMovementSection() {
   return (
-    <section className="mt-16 md:mt-24 bg-green-600 lg:rounded-2xl">
-      <div className="flex flex-col section gap-[66px] mx-auto  ">
+    <section
+      className="lg:mx-[10px] mt-[56.7px] md:mt-[49.85px] lg:mt-[60.93px]
+        bg-green-600 lg:rounded-2xl"
+    >
+      <div className="flex flex-col section gap-[66px] mx-auto">
         <div className="flex flex-col items-center gap-[19px]">
-          <h2 className="text-center text-white">
+          <h2
+            className="text-center !leading-[120%] !tracking-[-5%] !text-[41px]
+              md:!text-[51px] !font-black text-white"
+          >
             Join the Movement
           </h2>
 
-          <p className="max-w-[573px] text-center text-grey-50">
+          <p
+            className="max-w-[371px] md:max-w-[573px] text-center !leading-[150%]
+              !tracking-[0.2%] !text-[15px] text-grey-50"
+          >
             Be part of a community that shows up when it matters most,
             responding quickly to urgent needs and turning compassion into
             meaningful action.
@@ -122,7 +129,9 @@ export default function JoinMovementSection() {
           {cards.map((card, index) => (
             <li
               key={index}
-              className="relative overflow-hidden flex flex-col justify-between h-[412.86px] lg:h-[435.86px] px-[23px] py-[32px] rounded-[18.7px] bg-green-50"
+              className="relative overflow-hidden flex flex-col justify-between
+                h-[412.86px] lg:h-[435.86px] px-[23px] py-[32px] rounded-[18.7px]
+                bg-green-50"
             >
               {/* Watermark */}
               <Image
@@ -134,7 +143,10 @@ export default function JoinMovementSection() {
               />
 
               {/* Icon */}
-              <div className="relative flex justify-center items-center w-[54.86px] h-[54.86px]">
+              <div
+                className="relative flex justify-center items-center w-[54.86px]
+                  h-[54.86px]"
+              >
                 <Image
                   src="/assets/octagon.svg"
                   alt=""
@@ -148,11 +160,17 @@ export default function JoinMovementSection() {
 
               <div className="flex flex-col gap-[28px]">
                 <div className="flex flex-col gap-4">
-                  <h4 className=" text-grey-700">
+                  <h4
+                    className="!leading-[120%] !tracking-[-5%] !text-[24px] !font-bold
+                      text-grey-700"
+                  >
                     {card.title}
                   </h4>
 
-                  <p className=" text-grey-400">
+                  <p
+                    className="!leading-[150%] tracking-[0.2%] !text-[15px]
+                      text-grey-400"
+                  >
                     {card.description}
                   </p>
                 </div>
@@ -170,5 +188,3 @@ export default function JoinMovementSection() {
     </section>
   );
 }
-
-

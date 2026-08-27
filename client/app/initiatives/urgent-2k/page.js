@@ -21,7 +21,7 @@ export default function Urgent2KPage() {
       <JoinMovementSection />
       <PartnersSection />
       <MomentsOfImpactSection />
-      <NewsletterSection bgVariant="urgent" />
+      <NewsletterSection bgVariant="green" />
     </main>
   );
 }
