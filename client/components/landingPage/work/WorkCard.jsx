@@ -23,13 +23,26 @@ export default function WorkCard({
           fill
           className="object-contain"
         />
-        {icon && <Icon icon={icon} className="relative z-1 w-6 h-6 text-grey-900" />}
+        {icon && (
+          <Icon icon={icon} className="relative z-1 w-6 h-6 text-grey-900" />
+        )}
       </div>
 
       {/* Content */}
-      <div className={`relative z-10 mt-auto ${textColor}`}>
-        <h4 className="mb-4">{title}</h4>
-        <p className="">{description}</p>
+      <div className="relative z-10 mt-auto">
+        <h4
+          className={`mb-[21.2px] !leading-[120%] !tracking-[-5%]
+            !text-[24px] !font-bold ${textColor ? textColor : "text-grey-700"}`}
+        >
+          {title}
+        </h4>
+
+        <p
+          className={`!leading-[150%] !tracking-[0.2%] !text-[15px]
+            ${textColor ? textColor : "text-grey-400"}`}
+        >
+          {description}
+        </p>
       </div>
 
       {/* Background Pattern */}

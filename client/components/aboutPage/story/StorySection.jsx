@@ -56,7 +56,11 @@ export default function StorySection() {
             className="md:w-[574] lg:w-[694] md:h-[434] lg:h-[525] my-10 rounded-[10.51px] md:rounded-3xl"
           />
 
-          <p className="md:max-w-sm lg:max-w-2xl text-center text-grey-300">
+          <p
+            className="max-w-[351px] md:max-w-[718px] lg:max-w-[816px] text-center
+              !leading-[150%] !tracking-[0%] !text-[20px] md:!text-[22px] lg:!text-[24px]
+              !font-bold text-grey-300"
+          >
             Through intentional programmes and community-driven support, the
             organisation strives to restore hope, create opportunities, and
             build a brighter future for every child it reaches.
@@ -65,7 +69,12 @@ export default function StorySection() {
 
         <div className="flex flex-col gap-16">
           <div className="flex flex-col md:flex-row md:justify-between gap-5">
-            <p className="text-grey-400">Where Purpose Begins</p>
+            <p
+              className="!leading-[150%] !tracking-[0%] !text-[19px] md:!text-[22px]
+                lg:!text-[24px] !font-bold text-grey-400 md:text-grey-300"
+            >
+              Where Purpose Begins
+            </p>
 
             <TextReveal className="md:max-w-sm lg:max-w-xl font-bold">
               At the core of everything we do is a foundation rooted in purpose,

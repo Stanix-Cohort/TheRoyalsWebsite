@@ -4,11 +4,13 @@ import HeroBackground from "@/components/ui/HeroBackground";
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen overflow-hidden flex flex-col justify-center items-center px-4 py-16 md:py-20 lg:py-24 bg-grey-900">
-      
-       <HeroBackground />
+      <HeroBackground />
 
       <div className="relative z-10 flex flex-col items-center mt-14 text-center">
-        <h1 className="mb-[-2%] text-center font-black text-white">
+        <h1
+          className="mb-[-2%] text-center !leading-[100%] !tracking-[-4%] !text-[50px]
+            md:!text-[115px] lg:!text-[137px] !font-black text-white"
+        >
           About The Royals
         </h1>
 
@@ -24,7 +26,11 @@ export default function HeroSection() {
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-foreground to-transparent" />
         </div>
 
-        <h3 className="z-2 max-w-xs md:max-w-3xl mt-[-6%] uppercase text-center font-black text-white">
+        <h3
+          className="z-2 max-w-[357px] md:max-w-[694px] mt-[-6%] uppercase text-center
+            !leading-[100%] !tracking-[-4%] !text-[20px]
+            md:!text-[36px] !font-black text-white"
+        >
           Building a legacy of empowerment, one community at a time.
         </h3>
       </div>

@@ -42,13 +42,24 @@ export default function MilestonesSection() {
   const activeMilestone = milestones.find((m) => m.id === activeId);
 
   return (
-    <section className="section bg-white">
+    <section
+      className="section !mt-[90.37px] md:!mt-[151.12px] lg:!mt-[190.12px] !py-0
+        bg-white"
+    >
       <div className="flex flex-col gap-12 max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row lg:justify-between gap-12">
           <div className="flex flex-col gap-4">
-            <h3>Our Milestones</h3>
+            <h3
+              className="!leading-[120%] !tracking-[-5%] !text-[41px] md:!text-[51px]
+                !font-black text-grey-900"
+            >
+              Our Milestones
+            </h3>
 
-            <p className="max-w-xs md:max-w-sm text-grey-300">
+            <p
+              className="max-w-[374px] md:max-w-[413px] !leading-[150%] !tracking-[0.2%]
+                !text-[15px] text-grey-300"
+            >
               Key moments that shaped our organization and expanded our impact.
             </p>
           </div>
@@ -79,9 +90,13 @@ export default function MilestonesSection() {
                     onClick={() => setActiveId(milestone.id)}
                     aria-label={`Show milestones for ${milestone.year}`}
                     aria-pressed={milestone.id === activeId}
-                    className={`cursor-pointer px-4 py-1.5 rounded-[30px] text-sm whitespace-nowrap text-white ${
-                      milestone.id === activeId ? "bg-blue-300" : "bg-grey-200"
-                    }`}
+                    className={`cursor-pointer px-4 py-1.5 rounded-[30px] text-sm
+                      whitespace-nowrap text-white
+                      ${
+                        milestone.id === activeId
+                          ? "bg-blue-300"
+                          : "bg-grey-200"
+                      }`}
                   >
                     {milestone.year}
                   </button>
@@ -91,7 +106,13 @@ export default function MilestonesSection() {
 
             {/* Content */}
             <div aria-live="polite" className="flex flex-col gap-6">
-              <h5 id={activeMilestone.id}>{activeMilestone.title}</h5>
+              <h5
+                id={activeMilestone.id}
+                className="!leading-[120%] md:!leading-[150%] !tracking-[-5%]
+                  md:!tracking-[0%] !text-[24px] !font-bold text-grey-700"
+              >
+                {activeMilestone.title}
+              </h5>
 
               <ul
                 aria-labelledby={activeMilestone.id}
@@ -107,7 +128,13 @@ export default function MilestonesSection() {
                       className="shrink-0 mt-2"
                     />
 
-                    <p className="max-w-sm lg:max-w-2xl text-grey-300 leading-relaxed">{item}</p>
+                    <p
+                      className="max-w-[336px] md:max-w-[423px] !leading-[150%]
+                        md:!leading-[226%] !tracking-[0.2%] !text-[15px] md:!text-[17px]
+                        text-grey-400 md:text-grey-300"
+                    >
+                      {item}
+                    </p>
                   </li>
                 ))}
               </ul>

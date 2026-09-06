@@ -54,12 +54,23 @@ const cards = [
 
 export default function CoreValuesSection() {
   return (
-    <section className="section !pt-0 bg-white">
+    <section
+      className="section !mt-[104.29px] md:!mt-[106.05px] lg:!mt-[180.05px] !py-0
+        bg-white"
+    >
       <div className="flex flex-col gap-12 max-w-7xl mx-auto">
         <div className="flex flex-col items-center gap-5">
-          <h3 className="text-center">Our Core Values</h3>
+          <h3
+            className="text-center !leading-[120%] !tracking-[-5%] !text-[41px] md:!text-[51px]
+              !font-black text-grey-900"
+          >
+            Our Core Values
+          </h3>
 
-          <p className="max-w-md text-center text-grey-300">
+          <p
+            className="max-w-[360px] md:max-w-[413px] text-center !leading-[150%]
+              !tracking-[0.2%] !text-[15px] text-grey-300"
+          >
             Our journey is guided by a set of principles that shape how we act
             and define the impact we create.
           </p>
